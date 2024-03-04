@@ -53,7 +53,7 @@ Do đó, cần có một nơi để lưu trữ dữ liệu dùng để lọc cá
 
 Khi sử dụng Redis để lưu trữ, cần đảm bảo không xảy ra trường hợp 2 hoặc nhiều Rate Limit truy cập đồng thời vào cùng một bản ghi trong cùng một thời điểm. Để giải quyết vấn đề này, em sử dụng cơ chế lock ở Rate Limit.
 
-Dưới đây là sơ đồ tổng quan (high level design) mới của hệ thống:
+Dưới đây là high level design mới của hệ thống:
 
 ![high level design distributed rate limit](image/High%20level%20design%20distributed%20limit%20rate.png)
 
