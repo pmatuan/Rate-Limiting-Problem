@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,application/json
+    min-response-size: 1024
+
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  datasource:
+    cache:
+      type: redis
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+  application:
+    name: ${APPLICATION_NAME:api}
+
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+
+rate-limit:
+  api-url: ${API_URL:http://localhost:8083}
+  allowed-requests-per-second: ${ALLOWED_REQUESTS_PER_SECOND:1}
